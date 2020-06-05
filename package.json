@@ -1,5 +1,5 @@
 {
-  "version": "0.1.0",
+  "version": "0.0.0",
   "license": "MIT",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
@@ -17,7 +17,9 @@
     "lint": "tsdx lint",
     "prepare": "tsdx build"
   },
-  "peerDependencies": {},
+  "peerDependencies": {
+    "ts-nats": "^1.2.15"
+  },
   "husky": {
     "hooks": {
       "pre-commit": "tsdx lint"
@@ -29,13 +31,18 @@
     "singleQuote": true,
     "trailingComma": "es5"
   },
-  "name": "mock-nats-client",
+  "name": "@onichandame/mock-nats-client",
   "author": "onichandame",
   "module": "dist/mock-nats-client.esm.js",
   "devDependencies": {
+    "@types/randomstring": "^1.1.6",
     "husky": "^4.2.5",
+    "ts-nats": "^1.2.15",
     "tsdx": "^0.13.2",
     "tslib": "^2.0.0",
     "typescript": "^3.9.5"
+  },
+  "dependencies": {
+    "randomstring": "^1.1.5"
   }
 }
