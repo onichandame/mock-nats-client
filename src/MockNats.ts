@@ -85,7 +85,7 @@ export class MockNats extends Client {
     reply?: string
   ): Promise<void> {
     this.subs.forEach(sub => {
-      if (sub.max == sub.received) {
+      if (sub.max === sub.received) {
         this.subs.splice(this.subs.indexOf(sub), 1)
         return
       }
