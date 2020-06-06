@@ -1,27 +1,39 @@
-# TSDX Bootstrap
+# Mock NATS Client
 
-This project was bootstrapped with [TSDX](https://github.com/jaredpalmer/tsdx).
+A mocked NATS client for unit test. All messaging actions are carried out in memory only.
 
-## Local Development
+Has the same function signature and typing with the original ts-nats library.
 
-Below is a list of commands you will probably find useful.
+# Author
 
-### `npm start` or `yarn start`
+[onichandame](https://onichandame.com)
 
-Runs the project in development/watch mode. Your project will be rebuilt upon changes. TSDX has a special logger for you convenience. Error messages are pretty printed and formatted for compatibility VS Code's Problems tab.
+# Usage
 
-<img src="https://user-images.githubusercontent.com/4060187/52168303-574d3a00-26f6-11e9-9f3b-71dbec9ebfcb.gif" width="600" />
+Installation
 
-Your library will be rebuilt if you make edits.
+```bash
+yarn add @onichandame/mock-nats-client
+```
 
-### `npm run build` or `yarn build`
+Connection
 
-Bundles the package to the `dist` folder.
-The package is optimized and bundled with Rollup into multiple formats (CommonJS, UMD, and ES Module).
+```typescript
+import { connect } from '@onichandame/mock-nats-client'
 
-<img src="https://user-images.githubusercontent.com/4060187/52168322-a98e5b00-26f6-11e9-8cf6-222d716b75ef.gif" width="600" />
+const nc = await connect()
+```
 
-### `npm test` or `yarn test`
+Subscribe:
 
-Runs the test watcher (Jest) in an interactive mode.
-By default, runs tests related to files changed since the last commit.
+```typescript
+nc.subscribe('subject', (e, msg) => console.log(msg.data))
+```
+
+Publish:
+
+```typescript
+nc.publish('subscribe', {})
+```
+
+Any feature request or bug report is welcome.
