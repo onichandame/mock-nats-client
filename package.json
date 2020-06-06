@@ -17,7 +17,6 @@
     "prepare": "tsdx build"
   },
   "peerDependencies": {
-    "ts-nats": "^1.2.15"
   },
   "husky": {
     "hooks": {
@@ -37,6 +36,7 @@
     "typescript": "^3.9.5"
   },
   "dependencies": {
-    "randomstring": "^1.1.5"
+    "randomstring": "^1.1.5",
+    "ts-nats": "^1.2.15"
   }
 }
