@@ -19,7 +19,8 @@
   "peerDependencies": {},
   "husky": {
     "hooks": {
-      "pre-commit": "tsdx lint"
+      "pre-commit": "tsdx lint",
+      "pre-push": "tsdx build"
     }
   },
   "name": "@onichandame/mock-nats-client",
